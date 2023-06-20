@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Klinika.Models
+namespace Klinika.Database
 {
     public class Pacijent
     {

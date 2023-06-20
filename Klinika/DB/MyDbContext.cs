@@ -1,4 +1,4 @@
-﻿using Klinika.Models;
+﻿using Klinika.Database;
 using Microsoft.EntityFrameworkCore;
 
 namespace Klinika.DB

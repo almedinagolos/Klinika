@@ -1,4 +1,4 @@
-﻿namespace Klinika.Models
+﻿namespace Klinika.Database
 {
     public class Ljekar
     {

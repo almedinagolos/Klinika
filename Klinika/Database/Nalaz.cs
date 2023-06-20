@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Klinika.Models
+namespace Klinika.Database
 {
     public class Nalaz
     {
