@@ -1,0 +1,46 @@
+﻿@using Klinika.Helper;
+@model List<Klinika.Database.Ljekar>
+
+@{
+}<div style="display: flex; justify-content: space-between;">
+    <h3 style="margin-bottom: 0;">Lista Ljekara</h3>
+    <div class="mb-3">
+        <a class="btn btn-primary" href="Ljekar/Add">Dodaj ljekara</a>
+    </div>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Ime</th>
+            <th>Prezime</th>
+            <th>Titula</th>
+            <th>Šifra</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Ime</td>
+                <td>@item.Prezime</td>
+                <td>@EnumHelper.GetDisplayValue((TitulaEnum)Enum.Parse(typeof(TitulaEnum), @item.Titula.ToString()))</td>
+                <td>@item.Sifra</td>
+                <td><a class="btn btn-primary" href="Ljekar/Edit/@item.LjekarId">Uredi</a></td>
+                <td>
+                    <form method="post" action="/Ljekar/Delete/@item.LjekarId">
+                        <button type="submit" class="btn btn-danger" onclick="potvrdiBrisanje()">Obriši</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+<script>
+    function potvrdiBrisanje() {
+        return confirm("Jeste li sigurni da želite obrisati ljekara?");
+    }
+</script>

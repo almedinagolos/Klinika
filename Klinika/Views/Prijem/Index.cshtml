@@ -1,0 +1,70 @@
+﻿@using Klinika.Helper;
+@using Klinika.Models;
+@model List<Klinika.Database.Prijem>
+
+@{
+    DateTime datumOd = ViewBag.DatumOd;
+    DateTime datumDo = ViewBag.DatumDo;
+}
+<div style="display: flex; justify-content: space-between;">
+    <h3 style="margin-bottom: 0;">Lista prijema pacijenata</h3>
+    <div class="mb-3">
+        <a class="btn btn-primary" href="Prijem/Add">Dodaj prijem</a>
+    </div>
+</div>
+<div class="mb-3 d-flex">
+    <form method="get" action="@Url.Action("Index")" class="form-inline">
+        <div class="form-group mr-2">
+            <label for="DatumOd">Datum od:</label>
+            <input style="width: 200px;" id="DatumOd" name="datumOd" class="form-control" type="date" value="@ViewBag.DatumOd?.ToString("yyyy-MM-dd")" />
+        </div>
+        <div class="form-group mr-2">
+            <label for="DatumDo">Datum do:</label>
+            <input style="width: 200px;" id="DatumDo" name="datumDo" class="form-control" type="date" value="@ViewBag.DatumDo?.ToString("yyyy-MM-dd")" />
+        </div>
+        <button type="submit" class="btn btn-primary mt-2">Potvrdi</button>
+    </form>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Pacijent</th>
+            <th>Datum i vrijeme prijema</th>
+            <th>Nadležni Ljekar</th>
+            <th>Hitan prijem</th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Pacijent.ImePrezime</td>
+                <td>@item.DatumPrijema.ToString("dd-MM-yyyy hh:mm:ss")</td>
+                <td>@item.Ljekar.ToString()</td>
+                <td>@item.HitniPrijem</td>
+                <td>
+                    <a class="btn btn-info" href="@Url.Action("Index", "Nalaz", new { id = item.PrijemId })">Nalaz</a>
+                </td>
+                <td><a class="btn btn-primary" href="Prijem/Edit/@item.PrijemId">Uredi</a></td>
+                <td>
+                    <form method="post" action="/Prijem/Delete/@item.PrijemId">
+                        <button type="submit" class="btn btn-danger" onclick="return potvrdiBrisanje()">Otkaži prijem</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<script>
+    function potvrdiBrisanje() {
+        return confirm("Jeste li sigurni da želite obrisati pacijenta?");
+    }
+</script>
+
+
+

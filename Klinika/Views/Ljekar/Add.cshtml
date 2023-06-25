@@ -1,0 +1,30 @@
+﻿@using Klinika.Helper;
+@model Klinika.Models.AddLjekarVM
+@{
+}
+<h3>Dodaj Ljekara</h3>
+<form asp-action="Add" class="mt-5">
+    <div class="mb-3">
+        <label asp-for="Ime" class="form-label"></label>
+        <input style="width: 40%" asp-for="Ime" class="form-control">
+        <span asp-validation-for="Ime" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Prezime" class="form-label"></label>
+        <input style="width: 40%" asp-for="Prezime" class="form-control">
+        <span asp-validation-for="Prezime" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Titula" class="form-label"></label>
+        <select style="width: 40%" class="form-control" asp-for="Titula" asp-items="Html.GetEnumSelectList<TitulaEnum>()">
+            <option selected="selected" value="">Odaberite titulu</option>
+        </select>
+        <span asp-validation-for="Titula" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Sifra" class="form-label"></label>
+        <input style="width: 40%" asp-for="Sifra" class="form-control">
+        <span asp-validation-for="Sifra" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Potvrdi</button>
+</form>

@@ -1,0 +1,42 @@
+﻿@using Klinika.Helper;
+@model Klinika.Models.AddPrijemVM
+@{
+}
+<h3>Dodaj prijem pacijenta</h3>
+<form asp-action="Add" class="mt-5">
+    <div class="mb-3">
+        <label asp-for="DatumPrijema"></label>
+        <input style="width: 40%" asp-for="DatumPrijema" class="form-control">
+        <span asp-validation-for="DatumPrijema" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="PacijentId"></label>
+        <select style="width: 40%" asp-for="PacijentId" asp-items="Model.Pacijenti" class="form-control">
+            <option selected="selected" value="">Odaberite pacijenta</option>
+        </select>
+        <span asp-validation-for="PacijentId" class="text-danger"></span>
+     </div>
+    <div class="mb-3">
+        <label asp-for="LjekarId"></label>
+        <select style="width: 40%" asp-for="LjekarId" asp-items="Model.Ljekari" class="form-control">
+            <option selected="selected" value="">Odaberite ljekara</option>
+        </select>
+        <span asp-validation-for="LjekarId" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label for="HitniPrijem" class="form-label">Hitni prijem</label>
+        @{
+            var options = new List<SelectListItem>
+        {
+        new SelectListItem { Value = "DA", Text = "DA" },
+        new SelectListItem { Value = "NE", Text = "NE" }
+        };
+        }
+        <select style="width: 40%" asp-for="HitniPrijem" class="form-control" asp-items="options">
+            <option selected="selected" value="">Da li je ovaj prijem hitan?</option>
+        </select>
+        <span asp-validation-for="HitniPrijem" class="text-danger"></span>
+
+    </div>
+    <button type="submit" class="btn btn-primary">Potvrdi</button>
+</form>

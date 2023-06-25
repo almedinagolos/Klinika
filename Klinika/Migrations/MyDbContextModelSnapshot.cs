@@ -117,8 +117,9 @@ namespace Klinika.Migrations
                     b.Property<DateTime>("DatumPrijema")
                         .HasColumnType("datetime2");
 
-                    b.Property<byte>("HitniPrijem")
-                        .HasColumnType("tinyint");
+                    b.Property<string>("HitniPrijem")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("LjekarId")
                         .HasColumnType("int");

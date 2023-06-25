@@ -1,0 +1,43 @@
+﻿@using Klinika.Helper;
+@model Klinika.Models.UpdatePrijemVM
+@{
+}
+<h3>Uredi prijem pacijenta</h3>
+<form asp-action="Edit" class="mt-5">
+    <div class="mb-3">
+        <label asp-for="PacijentId" class="form-label"></label>
+        <input style="width: 40%" type="text" class="form-control" asp-for="PrijemId" readonly>
+    </div>
+    <div class="mb-3">
+        <label asp-for="DatumPrijema" class="form-label"></label>
+        <input style="width: 40%" asp-for="DatumPrijema" class="form-control">
+        <span asp-validation-for="DatumPrijema" class="text-danger"></span>
+    </div>
+
+
+    <div class="mb-3">
+        <label asp-for="PacijentId"></label>
+        <select style="width: 40%" asp-for="PacijentId" asp-items="Model.Pacijenti" class="form-control">
+        </select>
+        <span asp-validation-for="PacijentId" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="LjekarId"></label>
+        <select style="width: 40%" asp-for="LjekarId" asp-items="Model.Ljekari" class="form-control">
+        </select>
+        <span asp-validation-for="LjekarId" class="text-danger"></span>
+    </div>
+    <div class="mb-3" style="width: 40%">
+        <label asp-for="HitniPrijem" class="form-label">Hitni prijem</label>
+        @{
+            var options = new SelectList(new[]
+            {
+        new { Value = "DA", Text = "DA" },
+        new { Value = "NE", Text = "NE" }
+        }, "Value", "Text", Model.HitniPrijem);
+        }
+        @Html.DropDownListFor(model => model.HitniPrijem, options, new { @class = "form-control" })
+        <span asp-validation-for="HitniPrijem" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Potvrdi</button>
+</form>

@@ -85,3 +85,7 @@ C:\ProjektniZadatak\Klinika\Klinika\obj\Debug\net6.0\refint\Klinika.dll
 C:\ProjektniZadatak\Klinika\Klinika\obj\Debug\net6.0\Klinika.pdb
 C:\ProjektniZadatak\Klinika\Klinika\obj\Debug\net6.0\Klinika.genruntimeconfig.cache
 C:\ProjektniZadatak\Klinika\Klinika\obj\Debug\net6.0\ref\Klinika.dll
+C:\ProjektniZadatak\Klinika\Klinika\bin\Debug\net6.0\FluentValidation.dll
+C:\ProjektniZadatak\Klinika\Klinika\bin\Debug\net6.0\FluentValidation.AspNetCore.dll
+C:\ProjektniZadatak\Klinika\Klinika\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\ProjektniZadatak\Klinika\Klinika\obj\Debug\net6.0\Klinika.MvcApplicationPartsAssemblyInfo.cs

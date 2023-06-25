@@ -1,0 +1,33 @@
+﻿@using Klinika.Helper;
+@model Klinika.Models.UpdateLjekarVM
+@{
+}
+<h3>Uredi ljekara</h3>
+<form asp-action="Edit" class="mt-5">
+    <div class="mb-3">
+        <label asp-for="LjekarId" class="form-label"></label>
+        <input style="width: 40%" asp-for="LjekarId" class="form-control" readonly>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Ime" class="form-label"></label>
+        <input style="width: 40%" asp-for="Ime" class="form-control">
+        <span asp-validation-for="Ime" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Prezime" class="form-label"></label>
+        <input style="width: 40%" asp-for="Prezime" class="form-control">
+        <span asp-validation-for="Prezime" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Titula" class="form-label"></label>
+        <select style="width: 40%" asp-for="Titula" class="form-control" asp-items="Html.GetEnumSelectList<TitulaEnum>()">
+        </select>
+        <span asp-validation-for="Titula" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Sifra" form-label"></label>
+        <input style="width: 40%" asp-for="Sifra" class="form-control">
+        <span asp-validation-for="Sifra" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Potvrdi</button>
+</form>

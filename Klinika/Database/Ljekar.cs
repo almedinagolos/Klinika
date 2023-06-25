@@ -7,5 +7,9 @@
         public string Prezime { get; set; }
         public string Titula { get; set; }
         public string Sifra { get; set; }
+        public override string ToString()
+        {
+            return Ime + " " + Prezime + " - " + Sifra;
+        }
     }
 }

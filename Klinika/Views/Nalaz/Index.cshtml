@@ -1,0 +1,40 @@
+﻿@model List<Klinika.Database.Nalaz>
+
+<div style="display: flex; justify-content: space-between;">
+    <h3 style="margin-bottom: 0;">Nalazi pacijenta</h3>
+    <div class="mb-3">
+        <a class="btn btn-primary" href="@Url.Action("Add", "Nalaz", new { prijemId = ViewBag.PrijemId ?? 0 })">Dodaj nalaz</a>
+    </div>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Tekstualni opis nalaza</th>
+            <th>Datum kreiranja</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Opis</td>
+                <td>@item.DatumKreiranja.ToString("dd-MM-yyyy hh:mm:ss")</td>
+                <td><a class="btn btn-primary" href="#">Uredi</a></td>
+                <td>
+                    <form method="post" action="@Url.Action("Delete", "Nalaz", new { id = item.NalazId })">
+                        <button type="submit" class="btn btn-danger" onclick="return potvrdiBrisanje()">Otkaži prijem</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<script>
+    function potvrdiBrisanje() {
+        return confirm("Jeste li sigurni da želite obrisati nalaz pacijenta?");
+    }
+</script>

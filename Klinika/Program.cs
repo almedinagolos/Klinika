@@ -1,5 +1,7 @@
+using FluentValidation.AspNetCore;
 using Klinika.DB;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,6 +9,15 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<MyDbContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("cs")));
+builder.Services.AddFluentValidation(options =>
+ {
+     // Validate child properties and root collection elements
+     options.ImplicitlyValidateChildProperties = true;
+     options.ImplicitlyValidateRootCollectionElements = true;
+
+     // Automatic registration of validators in assembly
+     options.RegisterValidatorsFromAssembly(Assembly.GetExecutingAssembly());
+ });
 
 var app = builder.Build();
 

@@ -24,6 +24,50 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/ProjektniZadatak/Klinika/Klinika/Views/Ljekar/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGpla2FyXEFkZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/ProjektniZadatak/Klinika/Klinika/Views/Ljekar/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGpla2FyXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/ProjektniZadatak/Klinika/Klinika/Views/Ljekar/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGpla2FyXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/ProjektniZadatak/Klinika/Klinika/Views/Nalaz/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmFsYXpcQWRkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/ProjektniZadatak/Klinika/Klinika/Views/Nalaz/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmFsYXpcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/ProjektniZadatak/Klinika/Klinika/Views/Pacijent/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWplbnRcQWRkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/ProjektniZadatak/Klinika/Klinika/Views/Pacijent/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWplbnRcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/ProjektniZadatak/Klinika/Klinika/Views/Pacijent/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWplbnRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/ProjektniZadatak/Klinika/Klinika/Views/Prijem/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJpamVtXEFkZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/ProjektniZadatak/Klinika/Klinika/Views/Prijem/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJpamVtXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/ProjektniZadatak/Klinika/Klinika/Views/Prijem/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJpamVtXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/ProjektniZadatak/Klinika/Klinika/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

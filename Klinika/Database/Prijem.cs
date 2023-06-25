@@ -14,6 +14,6 @@ namespace Klinika.Database
         [ForeignKey(nameof(Ljekar))]
         public int LjekarId { get; set; }
         public Ljekar Ljekar { get; set; }
-        public byte HitniPrijem { get; set; }
+        public string HitniPrijem { get; set; }
     }
 }
