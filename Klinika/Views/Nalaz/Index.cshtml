@@ -1,5 +1,4 @@
-﻿@*@model List<Klinika.Database.Nalaz>*@
-@model Klinika.Models.IndexNalazVM
+﻿@model Klinika.Models.IndexNalazVM
 
 <div style="display: flex; justify-content: space-between;">
     <h3 style="margin-bottom: 0;">Lista nalaza za prijem</h3>
@@ -33,6 +32,7 @@
         }
     </tbody>
 </table>
+<a class="btn btn-primary" asp-controller="Prijem" asp-action="Index">Nazad na prijeme</a>
 
 <script>
     function potvrdiBrisanje() {
