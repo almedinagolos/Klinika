@@ -1,12 +1,13 @@
-﻿@model List<Klinika.Database.Nalaz>
+﻿@*@model List<Klinika.Database.Nalaz>*@
+@model Klinika.Models.IndexNalazVM
 
 <div style="display: flex; justify-content: space-between;">
-    <h3 style="margin-bottom: 0;">Nalazi pacijenta</h3>
+    <h3 style="margin-bottom: 0;">Lista nalaza za prijem</h3>
     <div class="mb-3">
-        <a class="btn btn-primary" href="@Url.Action("Add", "Nalaz", new { prijemId = ViewBag.PrijemId ?? 0 })">Dodaj nalaz</a>
+        <a class="btn btn-primary" asp-controller="Nalaz" asp-action="Add" asp-route-prijemId="@Model.PrijemId">Dodaj nalaz</a>
     </div>
 </div>
-
+<h6>Nalazi za Prijem ID: @Model.PrijemId</h6>
 <table class="table">
     <thead>
         <tr>
@@ -17,15 +18,15 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model)
+        @foreach (var item in Model.Nalazi)
         {
             <tr>
                 <td>@item.Opis</td>
                 <td>@item.DatumKreiranja.ToString("dd-MM-yyyy hh:mm:ss")</td>
                 <td><a class="btn btn-primary" href="#">Uredi</a></td>
                 <td>
-                    <form method="post" action="@Url.Action("Delete", "Nalaz", new { id = item.NalazId })">
-                        <button type="submit" class="btn btn-danger" onclick="return potvrdiBrisanje()">Otkaži prijem</button>
+                    <form method="post" action="/Nalaz/Delete/@item.NalazId">
+                        <button type="submit" class="btn btn-danger" onclick="return potvrdiBrisanje()">Obriši nalaz</button>
                     </form>
                 </td>
             </tr>

@@ -13,7 +13,7 @@
     </div>
 </div>
 <div class="mb-3 d-flex">
-    <form method="get" action="@Url.Action("Index")" class="form-inline">
+    <form method="get" asp-controller="Prijem" asp-action="Index" class="form-inline">
         <div class="form-group mr-2">
             <label for="DatumOd">Datum od:</label>
             <input style="width: 200px;" id="DatumOd" name="datumOd" class="form-control" type="date" value="@ViewBag.DatumOd?.ToString("yyyy-MM-dd")" />
@@ -47,7 +47,7 @@
                 <td>@item.Ljekar.ToString()</td>
                 <td>@item.HitniPrijem</td>
                 <td>
-                    <a class="btn btn-info" href="@Url.Action("Index", "Nalaz", new { id = item.PrijemId })">Nalaz</a>
+                    <a class="btn btn-info" asp-controller="Nalaz" asp-action="Index" asp-route-prijemId="@item.PrijemId">Nalaz</a>
                 </td>
                 <td><a class="btn btn-primary" href="Prijem/Edit/@item.PrijemId">Uredi</a></td>
                 <td>

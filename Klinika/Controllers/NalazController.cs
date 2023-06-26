@@ -21,18 +21,22 @@ namespace Klinika.Controllers
         [HttpGet]
         public async Task<IActionResult> Index(int prijemId)
         {
-            ViewBag.PrijemId = prijemId;
-
             var nalazi = await _context.Nalaz.Where(x => x.PrijemId == prijemId).ToListAsync();
-            return View(nalazi);
+            var viewModel = new IndexNalazVM
+            {
+                PrijemId = prijemId,
+                Nalazi = nalazi
+            };
+
+            return View(viewModel);
+        }
+        [HttpGet]
+        public IActionResult Add(int prijemId)
+        {
+            var viewModel = new AddNalazVM { PrijemId = prijemId };
+            return View(viewModel);
         }
 
-        [HttpGet]
-        public IActionResult Add(int? prijemId)
-        {
-            var addNalaz = new AddNalazVM { PrijemId = prijemId.Value, DatumKreiranja = DateTime.Now };
-            return View(addNalaz);
-        }
 
         [HttpPost]
         public async Task<IActionResult> Add(AddNalazVM addNalaz)
@@ -41,19 +45,21 @@ namespace Klinika.Controllers
             {
                 return View(addNalaz);
             }
-
             var nalaz = new Nalaz()
             {
                 Opis = addNalaz.Opis,
-                DatumKreiranja = addNalaz.DatumKreiranja.Value,
+                DatumKreiranja = DateTime.Now,
                 PrijemId = (int)addNalaz.PrijemId
+
             };
 
             _context.Nalaz.Add(nalaz);
             await _context.SaveChangesAsync();
 
-            return RedirectToAction("Index", new { prijemId = addNalaz.PrijemId });
+            return RedirectToAction("Index", new { addNalaz.PrijemId });
         }
+
+
 
         [HttpPost]
         public async Task<IActionResult> Delete(int id)
@@ -66,7 +72,7 @@ namespace Klinika.Controllers
                 await _context.SaveChangesAsync();
             }
 
-            return RedirectToAction("Index", new { prijemId = nalaz.PrijemId });
+            return RedirectToAction("Index", "Nalaz", new { prijemId = nalaz.PrijemId });
         }
     }
 }
