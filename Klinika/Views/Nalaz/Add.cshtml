@@ -5,11 +5,11 @@
     <input type="hidden" asp-for="PrijemId" value="@Model.PrijemId" />
     <div class="mb-3">
         <label asp-for="DatumKreiranja" class="form-label"></label>
-        <input asp-for="DatumKreiranja" class="form-control" value="@DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")" readonly>
+        <input style="width: 30%" asp-for="DatumKreiranja" class="form-control" value="@DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")" readonly>
     </div>
     <div class="mb-3">
         <label asp-for="Opis" class="form-label"></label>
-        <input asp-for="Opis" class="form-control">
+        <input style="width: 30%" asp-for="Opis" class="form-control">
         <span asp-validation-for="Opis" class="text-danger"></span>
     </div>
     <button type="submit" class="btn btn-primary">Potvrdi</button>
