@@ -8,7 +8,7 @@ namespace Klinika.Models
         [Display(Name = "Ime i prezime")]
 
         public string? ImePrezime { get; set; }
-        // [DataType(DataType.Date)]
+        [DataType(DataType.Date)]
         [Display(Name = "Datum rođenja")]
 
         public DateTime? DatumRodjenja { get; set; }
